@@ -1,0 +1,8 @@
+@(item:NavigationItem)(implicit request: Request[AnyContent], messages: Messages, lang: Lang)
+@{
+	item match {
+		case single: NavigationLink => renderNavigationLink(single)
+		case dropdown: NavigationDropDownLink => renderNavigationDropDownLink(dropdown)
+		case raw: NavigationHtmlRaw => raw.html
+	}
+}

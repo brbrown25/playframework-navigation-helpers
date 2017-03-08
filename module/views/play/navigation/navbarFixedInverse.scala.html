@@ -1,0 +1,9 @@
+@(brand: String, brandLink: String, navbar: NavigationBar, args: (Symbol, Any)*)(implicit request: Request[AnyContent], messages: Messages, lang: Lang)
+<div class="navbar navbar-inverse navbar-fixed-top">
+	<a class="navbar-brand" href="@brandLink">
+		<p><strong>@brand</strong></p>
+	</a>
+	<ul class="nav navbar-nav pull-right">
+	@navbar.items.map(renderNavbarItem)
+	</ul>
+</div>

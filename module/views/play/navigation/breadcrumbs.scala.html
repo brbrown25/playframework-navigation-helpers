@@ -1,0 +1,8 @@
+@(breadcrumbs: Seq[BreadCrumb], args: (Symbol, Any)*)
+<div id="breadcrumbs">
+	<ol class="breadcrumb">
+		@breadcrumbs.map { b =>
+			<li><a href="@b.link">@b.name</a></li>
+		}
+	</ol>
+</div>

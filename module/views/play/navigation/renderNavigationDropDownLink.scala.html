@@ -1,0 +1,14 @@
+@import com.bbrownsound.play.navigation
+@import com.bbrownsound.play.navigation.NavigationDropDownLink
+@import views.html.play.navigation.renderNavigationLink
+@(link: NavigationDropDownLink)
+<li class="dropdown @navigation.classes(link.args: _*)" id="@navigation.classes(link.args: _*)">
+	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="@link.text">
+		@link.fontIcon.map { fa => <i class="fa fa-@fa"></i> }
+		@if(!link.hideLinkText) {
+			@link.text
+		} <span class="caret"></span></a>
+	<ul class="dropdown-menu">
+	@link.links.map(renderNavigationLink(_))
+	</ul>
+</li>

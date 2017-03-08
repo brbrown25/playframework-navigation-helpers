@@ -1,0 +1,4 @@
+@(navbar: NavigationBar)(implicit request: Request[AnyContent], messages: Messages, lang: Lang)
+<nav id="@navigation.classes(navbar.args: _*)" class="@navigation.classes(navbar.args: _*)">
+@navbar.items.map(renderNavbarItem)
+</nav>
